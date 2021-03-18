@@ -1,4 +1,6 @@
- to Connect to MySQL Database in Python
+https://pynative.com/python-mysql-database-connection/
+
+ How to Connect to MySQL Database in Python
 
 Install MySQL connector module
 Use the pip command to install MySQL connector Python.
