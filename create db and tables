@@ -1,0 +1,30 @@
+import mysql.connector
+
+mydb = mysql.connector.connect( host="localhost", database="school",user="root",password="system123", charset="utf8")
+
+if mydb.is_connected : 
+   print("connected")
+
+mycursor = mydb.cursor()
+
+sql = "INSERT INTO students (name, address) VALUES (%s, %s)"
+val = ("John", "Highway 21")
+mycursor.execute(sql, val)
+
+mydb.commit()
+
+print(mycursor.rowcount, "record inserted.")
+
+
+# mycursor.execute("CREATE TABLE students (name VARCHAR(255), address VARCHAR(255))")
+# print("created")
+ 
+mycursor.execute("SELECT * FROM students")
+
+myresult = mycursor.fetchall()
+
+for x in myresult:
+  print(x)
+
+ 
+                    #    CHARACTER SET 'utf8'
